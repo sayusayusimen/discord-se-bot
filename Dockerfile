@@ -8,7 +8,8 @@ RUN pip install pynacl==1.3.0
 RUN pip install discord==1.0.1
 RUN pip install pyyaml==5.1.2
 
-ADD ./bot.py /
+ADD ./lib /bot/lib
+ADD ./config /bot/config
 
 EXPOSE 80
-CMD ["python", "-u" ,"/bot.py"]
+CMD ["python", "-u" ,"/bot/lib/run.py"]
