@@ -1,0 +1,4 @@
+volume:  0.3
+timeout: 10 # sec
+prefix: '$se '
+resource_path: './se'
