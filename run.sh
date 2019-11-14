@@ -1,0 +1,1 @@
+docker run --rm --env-file ./discord.env -v $(pwd)/se:/bot/se tenmihi/discord-se-bot:latest

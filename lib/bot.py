@@ -96,8 +96,6 @@ class SeBot(discord.Client):
             voice_path = self.command_to_voice[command]
             print(f"{message.author} playing {command}({voice_path})")
 
-            print(self.resource_path)
-
             self.voice.play(discord.FFmpegPCMAudio(self.resource_path / voice_path))
             self.voice.source = discord.PCMVolumeTransformer(self.voice.source)
             self.voice.source.volume = self.volume
