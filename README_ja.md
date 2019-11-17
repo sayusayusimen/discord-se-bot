@@ -6,7 +6,7 @@ discordのボイスチャンネルで短い音声を流すためのシンプル�
 
 dockerを利用して動かす方法と利用しないで動かす方法があります
 
-## 0. 実行に必要な依存関係の準備
+## 1. 実行に必要な依存関係の準備
 
 ### dockerを利用しない場合
 
@@ -18,20 +18,16 @@ dockerを利用して動かす方法と利用しないで動かす方法があ�
     - discord == 1.0.1
     - pyyaml == 5.1.2
 
+`./script/setup.sh`を実行します
+
 ### dockerを利用する場合
 
 以下をインストールします
 - docker
 
-## 1. setupの実行
+`./script/setup_with_docker.sh`を実行します
 
-`./setup.sh`を実行します
-
-```
-./setup.sh
-```
-
-## 2. tokenの用意
+## 2. tokenの設定
 
 `discord.env`を開いて以下の形でbotトークンを記述します
 
@@ -43,7 +39,7 @@ DISCORD_BOT_TOKEN=***
 
 `se`ディレクトリ内に音声ファイル(.mp3)を配置します
 
-## 4. コマンドコンフィグの用意
+## 4. コマンドの設定
 
 `config/command.yml`を開いて `コマンド名:音声ファイルへのパス` の形でコマンドを記述します
 
@@ -54,11 +50,13 @@ fuga: 'category/fuga.mp3'
 
 # 実行
 
-`run.sh`を実行します
+## dockerを利用しない場合
 
-```
-./run.sh
-```
+`./scirpt/run.sh` を実行します
+
+## dockerを利用する場合
+
+`./scirpt/run_with_docker.sh` を実行します
 
 # コマンド一覧
 
