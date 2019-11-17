@@ -1,5 +1,7 @@
-/se
+.DS_Store
+
 __pycache__
 
+/se
 /discord.env
 /config/command.yml

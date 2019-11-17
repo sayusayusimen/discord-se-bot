@@ -2,37 +2,65 @@
 
 discordのボイスチャンネルで短い音声を流すためのシンプルなbot
 
-# setup
+# セットアップ手順
 
-## 1. tokenの用意
+dockerを利用して動かす方法と利用しないで動かす方法があります
 
-プロジェクトのルートディレクトリに`discord.env`を用意して以下の形でbotトークンを記述します
+## 0. 実行に必要な依存関係の準備
+
+### dockerを利用しない場合
+
+以下をインストールします
+- ffmpeg
+- python3 >= 3.6
+- pip
+    - pynacl == 1.3.0
+    - discord == 1.0.1
+    - pyyaml == 5.1.2
+
+### dockerを利用する場合
+
+以下をインストールします
+- docker
+
+## 1. setupの実行
+
+`./setup.sh`を実行します
+
+```
+./setup.sh
+```
+
+## 2. tokenの用意
+
+`discord.env`を開いて以下の形でbotトークンを記述します
 
 ```
 DISCORD_BOT_TOKEN=***
 ```
 
-## 2. 音声ファイルの用意
+## 3. 音声ファイルの用意
 
-プロジェクトのルートディレクトリに`se`ディレクトリを作成して音声ファイルを配置します
+`se`ディレクトリ内に音声ファイル(.mp3)を配置します
 
-## 3. コマンドコンフィグの用意
+## 4. コマンドコンフィグの用意
 
-`config/command.yml`を用意して `コマンド名:音声ファイルへのパス` の形でコマンドを記述します
+`config/command.yml`を開いて `コマンド名:音声ファイルへのパス` の形でコマンドを記述します
 
 ```
 hoge: 'hoge.mp3'
 fuga: 'category/fuga.mp3'
 ```
 
-## 4. ビルドと実行
-docker-composeコマンドからimageをビルドして走らせます
+# 実行
+
+`run.sh`を実行します
 
 ```
-docker-compose up --build
+./run.sh
 ```
 
-# commands
+# コマンド一覧
 
 各コマンドはprefixを付けて入力する必要があります  
 (例えばデフォルトのprefixでhelpを表示する場合は`$se help`と入力してください)
@@ -55,9 +83,9 @@ botがボイスチャネルに接続している場合に切断します
 ## [voice_command]
 `config/command.yml`で設定したボイスを再生します
 
-# configuration
+# 設定項目
 
-`config/bot.yml` に設定を記述します
+`config/bot.yml` が設定ファイルです
 
 ## volume
 ボイスの再生ボリュームです(default: `0.3`)

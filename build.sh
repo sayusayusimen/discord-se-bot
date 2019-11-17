@@ -1,1 +1,0 @@
-docker build -t tenmihi/discord-se-bot:latest .
