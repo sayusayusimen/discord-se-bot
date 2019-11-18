@@ -97,3 +97,10 @@ Sound command prefix. (default: `$se`)
 
 ## resource_path
 The path of the directory where sound files are placed. (default: `./se`)
+
+# Author
+
+[@tenmihi](https://twitter.com/tenmihi)
+
+# License
+This project is licensed under the MIT License - see the LICENSE.md file for details

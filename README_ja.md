@@ -23,7 +23,6 @@ discordのボイスチャンネルで短い音声を流すためのシンプル�
 
 # セットアップ手順
 
-
 ## 1. setupスクリプトの実行
 
 dockerを使ってセットアップをする場合は `./script/setup_with_docker.sh` を、 そうでない場合は `./script/setup.sh`を実行します
@@ -97,3 +96,10 @@ botで利用できる各コマンドの頭につけるprefixです(default: `$se
 
 ## resource_path
 音声ファイルを格納しているディレクトリのパスです(default: `./se`)
+
+# 作者
+
+[@tenmihi](https://twitter.com/tenmihi)
+
+# ライセンス
+本ライブラリはMITライセンスのもと公開されています - LICENSE.md を参照してください
