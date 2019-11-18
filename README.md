@@ -1,4 +1,4 @@
-# discord-se-bot
+# :robot: discord-se-bot
 
 Simple discord bot to play short sound.
 

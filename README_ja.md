@@ -1,4 +1,4 @@
-# discord-se-bot
+# :robot: discord-se-bot
 
 discordのボイスチャンネルで短い音声を流すためのシンプルなbot
 
