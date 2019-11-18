@@ -2,15 +2,15 @@
 
 Simple discord bot to play short sound.
 
-# 日本語README
+## 日本語README
 
 日本語のREADMEは[こちら](https://github.com/tenmihi/discord-se-bot/blob/master/README_ja.md)です
 
-# Prerequisites
+## Prerequisites
 
 What things you need to setup the software.
 
-## Without docker
+### Without docker
 
 - ffmpeg
 - python3 >= 3.6
@@ -19,21 +19,21 @@ What things you need to setup the software.
     - discord == 1.0.1
     - pyyaml == 5.1.2
 
-## With docker
+### With docker
 
 - docker
 
-# Installation
+## Installation
 
-## 1. Run setup script
+### 1. Run setup script
 
-### Without docker
+#### Without docker
 Run `./script/setup.sh`.
 
-### With docker
+#### With docker
 Run `./script/setup_with_docker.sh`.
 
-## 2. Configure token
+### 2. Configure token
 
 Open `./discord.env` and write token referring to the following.
 
@@ -41,11 +41,11 @@ Open `./discord.env` and write token referring to the following.
 DISCORD_BOT_TOKEN=***
 ```
 
-## 3. Place sound files
+### 3. Place sound files
 
 Place sound files in `./se` directory.
 
-## 4. Configure command
+### 4. Configure command
 
 Open `./config/command.yml`,  write command config in the format `command:filepath`.
 
@@ -54,57 +54,57 @@ hoge: 'hoge.mp3'
 fuga: 'category/fuga.mp3'
 ```
 
-# Running the bot
+## Running the bot
 
-## Without docker
+### Without docker
 
 Run `./scirpt/run.sh`.
 
-## With docker
+### With docker
 
 Run `./scirpt/run_with_docker.sh`.
 
-# Commands
+## Commands
 
 Each command must be entered with a prefix.  
 (For example, to exec help command with the default prefix, type `$ se help`)
 
-## help
+### help
 Show help.
 
-## ping
+### ping
 Send ping to bot.
 
-## sound_list
+### sound_list
 Show available sound list.
 
-## reload_sound
+### reload_sound
 Reload command config and update sound list.
 
-## disconnect
+### disconnect
 Disconnect from voice channel.
 
-## [sound_command]
+### [sound_command]
 Play sound.
 
-# Configuration
+## Configuration
 Config file is placed in `./config/bot.yml`
 
-## volume
+### volume
 Sound playback volume. (default: `0.3`)
 
-## timeout
+### timeout
 Automatically disconnect from the voice channel after the specified seconds immediately after the last voice playback. (default: `10`)
 
-## prefix
+### prefix
 Sound command prefix. (default: `$se`)
 
-## resource_path
+### resource_path
 The path of the directory where sound files are placed. (default: `./se`)
 
-# Author
+## Author
 
 [@tenmihi](https://twitter.com/tenmihi)
 
-# License
+## License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/tenmihi/discord-se-bot/blob/master/LICENSE.md) file for details
