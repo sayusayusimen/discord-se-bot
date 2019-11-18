@@ -6,7 +6,7 @@ import textwrap
 from custom_timer import CustomTimer
 
 class SeBot(discord.Client):
-    def __init__(self, command_to_voice_config_path: dict, general_config_path: dict):
+    def __init__(self, command_to_sound_config_path: dict, general_config_path: dict):
         super().__init__()
         config = self.read_config(general_config_path)
         self.prefix = config['prefix']
@@ -15,8 +15,8 @@ class SeBot(discord.Client):
         self.set_resource_path(config['resource_path'])
         self.set_command_prefix_regex(config['prefix'])
 
-        self.command_to_voice_config_path = command_to_voice_config_path
-        self.set_command_to_voice()
+        self.command_to_sound_config_path = command_to_sound_config_path
+        self.set_command_to_sound()
 
         self.voice = None
         self.timer = None
@@ -33,8 +33,8 @@ class SeBot(discord.Client):
         base_path = Path(__file__).parent.parent
         self.resource_path = base_path / resource_path
 
-    def set_command_to_voice(self):
-        self.command_to_voice = self.read_config(self.command_to_voice_config_path)
+    def set_command_to_sound(self):
+        self.command_to_sound = self.read_config(self.command_to_sound_config_path)
 
     async def on_ready(self):
         print('logged in')
@@ -56,10 +56,10 @@ class SeBot(discord.Client):
 
             - {prefix}help:         show help
             - {prefix}ping:         send ping
-            - {prefix}voice_list:   show up currently available voice list
-            - {prefix}reload_voice: reload voice config
+            - {prefix}sound_list:   show up currently available sound list
+            - {prefix}reload_sound: reload sound config
             - {prefix}disconnect:   disconnect from voice channel
-            - {prefix}[voice_name]: play voice
+            - {prefix}[sound_name]: play sound
             ```
             '''.format(prefix = self.prefix)
 
@@ -74,17 +74,17 @@ class SeBot(discord.Client):
             await self.voice.disconnect()
             return
         
-        if command == "voice_list":
-            voice_list = "\n".join(map(lambda x: f"- {self.prefix}{x}", self.command_to_voice.keys()))
-            await message.channel.send(f"```{voice_list}```")
+        if command == "sound_list":
+            sound_list = "\n".join(map(lambda x: f"- {self.prefix}{x}", self.command_to_sound.keys()))
+            await message.channel.send(f"```{sound_list}```")
             return
         
-        if command == "reload_voice":
-            self.set_command_to_voice()
+        if command == "reload_sound":
+            self.set_command_to_sound()
             await message.channel.send("reloaded.")
             return
 
-        if command in self.command_to_voice:
+        if command in self.command_to_sound:
             if message.author.voice is None:
                 await  message.channel.send('ボイスチャンネルに参加して、もう一度実行してください。')
                 return
@@ -93,10 +93,10 @@ class SeBot(discord.Client):
                 self.voice = await self.get_channel(message.author.voice.channel.id).connect()
                 self.set_timer()
 
-            voice_path = self.command_to_voice[command]
-            print(f"{message.author} playing {command}({voice_path})")
+            sound_path = self.command_to_sound[command]
+            print(f"{message.author} playing {command}({sound_path})")
 
-            self.voice.play(discord.FFmpegPCMAudio(self.resource_path / voice_path))
+            self.voice.play(discord.FFmpegPCMAudio(self.resource_path / sound_path))
             self.voice.source = discord.PCMVolumeTransformer(self.voice.source)
             self.voice.source.volume = self.volume
 
