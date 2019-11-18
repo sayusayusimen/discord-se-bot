@@ -2,6 +2,10 @@
 
 Simple discord bot to play short sound.
 
+# 日本語README
+
+日本語のREADMEは[こちら](https://github.com/tenmihi/discord-se-bot/blob/master/README_ja.md)です
+
 # Prerequisites
 
 What things you need to setup the software.
@@ -103,4 +107,4 @@ The path of the directory where sound files are placed. (default: `./se`)
 [@tenmihi](https://twitter.com/tenmihi)
 
 # License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/tenmihi/discord-se-bot/blob/master/LICENSE.md) file for details
