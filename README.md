@@ -47,7 +47,7 @@ Place sound files in `./se` directory.
 
 ## 4. Configure command
 
-Oepn `./config/command.yml`,  write command config in the format `command:filepath`.
+Open `./config/command.yml`,  write command config in the format `command:filepath`.
 
 ```
 hoge: 'hoge.mp3'
