@@ -71,16 +71,16 @@ Show help.
 ## ping
 Send ping to bot.
 
-## voice_list
+## sound_list
 Show available sound list.
 
-## reload_voice
+## reload_sound
 Reload command config and update sound list.
 
 ## disconnect
 Disconnect from voice channel.
 
-## [voice_command]
+## [sound_command]
 Play sound.
 
 # Configuration

@@ -69,16 +69,16 @@ fuga: 'category/fuga.mp3'
 ## ping
 botの応答確認用コマンドです
 
-## voice_list
+## sound_list
 利用可能な音声コマンド一覧を表示します
 
-## reload_voice
-コマンドコンフィグを再読込します
+## reload_sound
+コマンドコンフィグを再読込して利用可能な音声コマンド一覧を更新します
 
 ## disconnect
 botがボイスチャネルに接続している場合に切断します
 
-## [voice_command]
+## [sound_command]
 `config/command.yml`で設定したボイスを再生します
 
 # 設定項目
